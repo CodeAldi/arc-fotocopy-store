@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 class KategoriBarangController extends Controller
 {
-    //
+    
 }

@@ -16,14 +16,14 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
-            <a href="#" class="menu-link">
+        <li class="menu-item {{ (Request::RouteIs('beranda')) ? 'active' : '' }}">
+            <a href="{{ route('beranda') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div>Beranda</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="#" class="menu-link">
+        <li class="menu-item {{ (Request::RouteIs('barang.*')) ? 'active' : '' }}">
+            <a href="{{ route('barang.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div>Manajemen Barang</div>
             </a>

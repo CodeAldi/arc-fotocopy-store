@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('beranda');
+})->name('beranda');
+
+Route::controller(BarangController::class)->group(function(){
+    Route::get('/barang','index')->name('barang.index');
 });
