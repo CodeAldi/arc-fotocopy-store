@@ -4,14 +4,20 @@
     <div class="col-8">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">List Barang</h5>
+                <div class="row">
+                    <h5 class="card-title mt-2 col-8">List Barang</h5>
+                    <button class="btn btn-primary col-4">Tambah</button>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">List Kategori Barang</h5>
+                <div class="row">
+                    <h5 class="card-title mt-2 col-8">List Kategori Barang</h5>
+                    <button class="btn btn-primary col-4">Tambah</button>
+                </div>
             </div>
         </div>
     </div>
