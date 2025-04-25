@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KategoriBarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,8 @@ Route::get('/', function () {
 
 Route::controller(BarangController::class)->group(function(){
     Route::get('/barang','index')->name('barang.index');
+});
+Route::controller(KategoriBarangController::class)->group(function(){
+    Route::post('/kategori-barang/tambah','store')->name('kategoriBarang.tambah');
+    Route::delete('/kategori-barang/{item}/hapus','destroy')->name('kategoriBarang.hapus');
 });
