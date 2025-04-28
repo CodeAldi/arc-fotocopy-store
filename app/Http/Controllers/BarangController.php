@@ -14,4 +14,7 @@ class BarangController extends Controller
             'kategoriBarang'=>$kategoriBarang,
         ]);
     }
+    function store(Request $request) {
+        return back();
+    }
 }
