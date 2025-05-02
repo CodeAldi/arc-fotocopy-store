@@ -24,19 +24,19 @@
         </li>
         <li class="menu-item {{ (Request::RouteIs('barang.*')) ? 'active' : '' }}">
             <a href="{{ route('barang.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-archive"></i>
                 <div>Manajemen Barang</div>
             </a>
         </li>
         <li class="menu-item">
             <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-printer"></i>
                 <div>Manajemen Jasa</div>
             </a>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <i class="menu-icon tf-icons bx bx-package"></i>
                 <div >Manajemen Pesanan</div>
             </a>
             <ul class="menu-sub">

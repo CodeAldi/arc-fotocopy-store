@@ -10,4 +10,5 @@ class KategoriBarang extends Model
     use HasFactory;
     protected $table = 'kategori_barang';
     protected $guarded = ['id'];
+    
 }
