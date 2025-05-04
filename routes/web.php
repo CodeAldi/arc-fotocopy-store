@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('beranda');
+    return view('beranda',['title'=>'Beranda']);
 })->name('beranda');
 
 Route::controller(BarangController::class)->group(function(){
@@ -26,4 +27,7 @@ Route::controller(BarangController::class)->group(function(){
 Route::controller(KategoriBarangController::class)->group(function(){
     Route::post('/kategori-barang/tambah','store')->name('kategoriBarang.tambah');
     Route::delete('/kategori-barang/{item}/hapus','destroy')->name('kategoriBarang.hapus');
+});
+Route::controller(JasaController::class)->group(function(){
+    Route::get('/jasa','index')->name('jasa.index');
 });

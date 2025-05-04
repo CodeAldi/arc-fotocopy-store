@@ -28,8 +28,8 @@
                 <div>Manajemen Barang</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="#" class="menu-link">
+        <li class="menu-item {{ (Request::RouteIs('jasa.*')) ? 'active' : '' }}">
+            <a href="{{ route('jasa.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-printer"></i>
                 <div>Manajemen Jasa</div>
             </a>

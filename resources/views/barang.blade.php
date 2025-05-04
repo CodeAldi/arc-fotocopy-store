@@ -26,7 +26,7 @@
     <div class="col-8">
         <div class="card">
             <div class="card-body">
-                <table class="table">
+                <table class="table" id="tabelBarang">
                     <thead>
                         <tr>
                             <th>no</th>
@@ -44,14 +44,15 @@
                                 <td>{{ $item->namaBarang }}</td>
                                 <td>{{ $item->kategori->namaKategori }}</td>
                                 <td>{{ $item->jumlah }}</td>
-                                <td>{{ $item->hargaBarang }}</td>
+                                <td>Rp.{{ $item->hargaBarang }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                             <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
                                         <div class="dropdown-menu">
-                                            {{-- <button class="dropdown-item" type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button> --}}
+                                            <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}" onclick="modalEdit(this)" data-bs-target="#modalLihatBarang"><i class="bx bx-show me-1"></i> Lihat</button>
+                                            <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEditBarang"><i class="bx bx-edit-alt me-1"></i> Edit</button>
                                             <form action="{{ Route('kategoriBarang.hapus',['item'=>$item]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -72,7 +73,7 @@
     <div class="col-4">
         <div class="card">
             <div class="card-body">
-                <table class="table">
+                <table class="table" id="tableKategori">
                     <thead>
                         <tr>
                             <th>nama</th>
@@ -205,4 +206,84 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modalLihatBarang" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="{{ Route('Barang.tambah') }}" method="post">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Lihat Barang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-1">
+                        <div class="col">
+                            <label for="lihatNama" class="form-label">nama</label>
+                            <input type="text" id="lihatNama" class="form-control" name="nama"
+                                disabled />
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col">
+                            <label for="lihatKategori" class="form-label">kategori</label>
+                            <input name="kategori" id="lihatKategori" class="form-select text-secondary" value="" disabled> 
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col">
+                            <label for="lihatJumlah" class="form-label">jumlah</label>
+                            <input type="number" disabled name="jumlah" class="form-control" id="lihatJumlah" min="0" placeholder="0">
+                        </div>
+                        <div class="col">
+                            <label for="lihatHarga" class="form-label">harga satuan</label>
+                            <div class="input-group">
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text" style="background: #eceef1;">Rp</span>
+                                    <input disabled type="number" name="harga" class="form-control" id="lihatHarga" min="0" placeholder="0">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col">
+                            <label for="lihatDeskripsi" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" disabled placeholder="masukan deskripsi singkat barang" id="lihatDeskripsi" cols="30" rows="3" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="gambar" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="gambar" name="gambar" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@push('page-js')
+<script type="text/javascript">
+    let table = new DataTable('#tabelBarang', {
+                // options
+                });
+            function modalEdit(item) {
+                let indexnya = item.getAttribute("data-index");
+                const myjson = JSON.parse(indexnya);
+                document.getElementById("lihatNama").value = myjson.namaBarang;
+                document.getElementById("lihatDeskripsi").value = myjson.deskripsi;
+                document.getElementById("lihatJumlah").value = myjson.jumlah;
+                document.getElementById("lihatHarga").value = myjson.hargaBarang;
+                document.getElementById("lihatKategori").value = myjson.kategori.namaKategori;
+                console.log(myjson);
+                
+            }
+</script>
+@endpush
 @endsection

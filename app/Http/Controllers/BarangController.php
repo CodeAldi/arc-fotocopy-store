@@ -13,6 +13,7 @@ class BarangController extends Controller
         $kategoriBarang = KategoriBarang::all();
         $barang = Barang::all();
         return view('barang',[
+            'title'=>'Manajemen Barang',
             'kategoriBarang'=>$kategoriBarang,
             'barang'=>$barang,
         ]);

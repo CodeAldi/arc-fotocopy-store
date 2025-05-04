@@ -8,12 +8,17 @@
     <div class="row">
         <div class="col-4">
             <div class="card bg-primary text-white">
-                <div class="card-body"> stok barang yang kosong : </div>
+                <div class="card-body"> stok barang yang kosong : -</div>
             </div>
         </div>
         <div class="col-4">
             <div class="card bg-warning text-white">
                 <div class="card-body"> pesanan menunggu dicetak : -</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card bg-success text-white">
+                <div class="card-body"> pesanan menunggu diambil : -</div>
             </div>
         </div>
     </div>
