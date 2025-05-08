@@ -141,7 +141,7 @@
 <div class="modal fade" id="modalEditKategori" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="{{ Route('kategoriBarang.tambah') }}" method="post">
+            <form action="{{ Route('kategoriBarang.update') }}" method="post">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalCenterTitle">Edit Kategori Barang</h5>
@@ -151,7 +151,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="nameWithTitle" class="form-label">nama</label>
-                        <input type="text" id="editIdKategori" class="form-control" name="id" placeholder="masukan nama kategori baru" />
+                        <input type="text" id="editIdKategori" class="form-control" hidden name="id" placeholder="masukan nama kategori baru" />
                         <input type="text" id="editNamaKategori" class="form-control" name="nama" placeholder="masukan nama kategori baru" />
                         <span class="form-text">nama kategori baru tidak boleh sama dengan yang sudah ada</span>
                     </div>

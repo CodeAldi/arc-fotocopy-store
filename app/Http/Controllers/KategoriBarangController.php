@@ -13,6 +13,12 @@ class KategoriBarangController extends Controller
         $kategoriBarang->save();
         return back();
     }
+    function update(Request $request) {
+        $kategoriBarang = KategoriBarang::find($request->id);
+        $kategoriBarang->namaKategori = $request->nama;
+        $kategoriBarang->save();
+        return back();
+    }
     function destroy(KategoriBarang $item) {
         $item->delete();
 
