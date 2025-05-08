@@ -53,7 +53,7 @@
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}" onclick="modalLihat(this)" data-bs-target="#modalLihatBarang"><i class="bx bx-show me-1"></i> Lihat</button>
                                             <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}" onclick="modalEdit(this)" data-bs-target="#modalEditBarang"><i class="bx bx-edit-alt me-1"></i> Edit</button>
-                                            <form action="{{ Route('kategoriBarang.hapus',['item'=>$item]) }}" method="post">
+                                            <form action="{{ Route('barang.hapus',['barang'=>$item]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="dropdown-item" type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
@@ -170,7 +170,7 @@
 <div class="modal fade" id="modalTambahBarang" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="{{ Route('Barang.tambah') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ Route('barang.tambah') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalCenterTitle">Tambah Barang</h5>

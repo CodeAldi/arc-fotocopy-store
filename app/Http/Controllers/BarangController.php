@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\KategoriBarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {
@@ -30,6 +31,7 @@ class BarangController extends Controller
         return back();
     }
     function destroy(Barang $barang) {
+        $hasil = Storage::delete('public/'.$barang->gambar);
         $barang->delete();
         return back();
     }
