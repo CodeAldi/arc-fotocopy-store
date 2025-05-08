@@ -25,7 +25,12 @@ class BarangController extends Controller
         $barang->deskripsi = $request->deskripsi;
         $barang->jumlah = $request->jumlah;
         $barang->hargaBarang = $request->harga;
+        $barang->gambar = $request->file('gambar')->store('gambarBarang');
         $barang->save();
+        return back();
+    }
+    function destroy(Barang $barang) {
+        $barang->delete();
         return back();
     }
 }

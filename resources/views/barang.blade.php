@@ -170,7 +170,7 @@
 <div class="modal fade" id="modalTambahBarang" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="{{ Route('Barang.tambah') }}" method="post">
+            <form action="{{ Route('Barang.tambah') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalCenterTitle">Tambah Barang</h5>
@@ -282,7 +282,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="gambar" class="form-label">Gambar Barang</label>
-                            <img src="" alt="gambar barang" class="img-thumbnail">
+                            <img src="{{ asset('') }}" id="lihatGambar" alt="gambar barang" class="img-thumbnail">
                         </div>
                     </div>
                 </div>
@@ -372,7 +372,10 @@
                 document.getElementById("lihatJumlah").value = myjson.jumlah;
                 document.getElementById("lihatHarga").value = myjson.hargaBarang;
                 document.getElementById("lihatKategori").value = myjson.kategori.namaKategori;
-                console.log(myjson);    
+                let string1 = document.getElementById("lihatGambar").src;
+                let string2 = string1.substring(0,31) + '/storage/' + myjson.gambar;
+                document.getElementById("lihatGambar").src = string2;
+                console.log(string2);    
             }
             function modalEdit(item) {
                 let indexnya = item.getAttribute("data-index");
