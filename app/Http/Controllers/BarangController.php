@@ -30,7 +30,8 @@ class BarangController extends Controller
         $barang->save();
         return back();
     }
-    function destroy(Barang $barang) {
+    function destroy(Request $request) {
+        $barang = Barang::find($request->id);
         $hasil = Storage::delete('public/'.$barang->gambar);
         $barang->delete();
         return back();

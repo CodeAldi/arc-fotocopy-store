@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::controller(BarangController::class)->group(function(){
     Route::get('/barang','index')->name('barang.index');
     Route::post('/barang/tambah', 'store')->name('barang.tambah');
-    Route::delete('/barang/{barang}/hapus', 'destroy')->name('barang.hapus');
+    Route::post('/barang/hapus', 'destroy')->name('barang.hapus');
 });
 Route::controller(KategoriBarangController::class)->group(function(){
     Route::post('/kategori-barang/tambah','store')->name('kategoriBarang.tambah');
