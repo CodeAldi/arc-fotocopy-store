@@ -28,7 +28,7 @@ Route::controller(BarangController::class)->group(function(){
 Route::controller(KategoriBarangController::class)->group(function(){
     Route::post('/kategori-barang/tambah','store')->name('kategoriBarang.tambah');
     Route::post('/kategori-barang/update','update')->name('kategoriBarang.update');
-    Route::delete('/kategori-barang/{item}/hapus','destroy')->name('kategoriBarang.hapus');
+    Route::post('/kategori-barang/hapus','destroy')->name('kategoriBarang.hapus');
 });
 Route::controller(JasaController::class)->group(function(){
     Route::get('/jasa','index')->name('jasa.index');

@@ -19,9 +19,9 @@ class KategoriBarangController extends Controller
         $kategoriBarang->save();
         return back();
     }
-    function destroy(KategoriBarang $item) {
-        $item->delete();
-
+    function destroy(Request $request) {
+        $kategoriBarang = KategoriBarang::find($request->id);
+        $kategoriBarang->delete();
         return back();
     }
 }

@@ -92,11 +92,8 @@
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}" onclick="modalEditKategori(this)"
                                                 data-bs-target="#modalEditKategori"><i class="bx bx-edit-alt me-1"></i> Edit</button>
-                                            <form action="{{ Route('kategoriBarang.hapus',['item'=>$item]) }}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="dropdown-item" type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
-                                            </form>
+                                            <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}" onclick="modalHapusKategori(this)"
+                                                data-bs-target="#modalHapusKategori"><i class="bx bx-trash me-1"></i> Delete</button>
                                         </div>
                                     </div>
                                 </td>
@@ -134,6 +131,33 @@
                 </button>
                 <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalHapusKategori" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="{{ Route('kategoriBarang.hapus') }}" method="post">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Hapus Kategori Barang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <h1 for="hapusKategoriId" class="fs-3">Apakah anda yakin ingin menghapus kategori Barang ini?</h1>
+                            <input type="text" id="hapusKategoriId" class="form-control" name="id" hidden readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
             </form>
         </div>
     </div>
@@ -399,6 +423,11 @@
                 const myjson = JSON.parse(indexnya);
                 document.getElementById("editIdKategori").value = myjson.id;
                 document.getElementById("editNamaKategori").value = myjson.namaKategori;
+            }
+            function modalHapusKategori(item) {
+                let indexnya = item.getAttribute("data-index");
+                const myjson = JSON.parse(indexnya);
+                document.getElementById("hapusKategoriId").value = myjson.id;
             }
 </script>
 @endpush
