@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\KategoriJasaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,11 @@ Route::controller(KategoriBarangController::class)->group(function(){
     Route::post('/kategori-barang/hapus','destroy')->name('kategoriBarang.hapus');
 });
 Route::controller(JasaController::class)->group(function(){
-    Route::get('/jasa','index')->name('jasa.index');
+    Route::get('jasa','index')->name('jasa.index');
+    Route::post('jasa/tambah','store')->name('jasa.tambah');
+});
+Route::controller(KategoriJasaController::class)->group(function(){
+    Route::post('kategori-jasa/tambah','store')->name('kategoriJasa.tambah');
+    Route::post('kategori-jasa/update','update')->name('kategoriJasa.update');
+    Route::post('kategori-jasa/hapus','destroy')->name('kategoriJasa.hapus');
 });
