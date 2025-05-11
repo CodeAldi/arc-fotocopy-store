@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('kategori_jasa_id')->constrained('kategori_jasa')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('namaJasa');
             $table->float('harga',13,3);
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
