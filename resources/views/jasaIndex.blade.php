@@ -227,11 +227,6 @@
                 </div>
                 <div class="row mb-1">
                     <div class="col">
-                        <label for="lihatJumlah" class="form-label">jumlah</label>
-                        <input type="number" disabled name="jumlah" class="form-control" id="lihatJumlah" min="0"
-                            placeholder="0">
-                    </div>
-                    <div class="col">
                         <label for="lihatHarga" class="form-label">harga satuan</label>
                         <div class="input-group">
                             <div class="input-group input-group-merge">
@@ -337,6 +332,8 @@
 <div class="modal fade" id="modalEditJasa" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
+            <form action="{{ Route('jasa.edit') }}" method="post">
+            @csrf
             <div class="modal-header">
                 <h5 class="modal-title" id="modalCenterTitle">Edit Barang</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -346,7 +343,7 @@
                     <div class="col">
                         <label for="editNama" class="form-label">nama</label>
                         <input type="text" id="editNama" class="form-control" name="nama" />
-                        <input type="text" id="editId" class="form-control" name="nama" hidden />
+                        <input type="text" id="editId" class="form-control" name="id" hidden />
                     </div>
                 </div>
                 <div class="row mb-1">
@@ -393,7 +390,9 @@
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                     Close
                 </button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -449,6 +448,8 @@
                 let indexnya = item.getAttribute("data-index");
                 const myjson = JSON.parse(indexnya);
                 document.getElementById("editId").value = myjson.id;
+                console.log(document.getElementById("editId").value);
+                
                 document.getElementById("editNama").value = myjson.namaJasa;
                 document.getElementById("editDeskripsi").value = myjson.deskripsi;
                 document.getElementById("editHarga").value = myjson.harga;   

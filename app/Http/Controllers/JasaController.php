@@ -31,7 +31,11 @@ class JasaController extends Controller
     }
     function update(Request $request) {
         $jasa = Jasa::find($request->id);
-        dd($jasa);
+        $jasa->kategori_jasa_id = $request->kategori;
+        $jasa->namaJasa = $request->nama;
+        $jasa->harga = $request->harga;
+        $jasa->deskripsi = $request->deskripsi;
+        $jasa->save();
         return back();
     }
     function destroy(Request $request) {
