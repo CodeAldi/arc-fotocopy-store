@@ -422,7 +422,7 @@
                 document.getElementById("lihatHarga").value = myjson.hargaBarang;
                 document.getElementById("lihatKategori").value = myjson.kategori.namaKategori;
                 let string1 = document.getElementById("lihatGambar").src;
-                let string2 = string1.substring(0,31) + '/storage/' + myjson.gambar;
+                let string2 = string1.substring(0,31) + '/' + myjson.gambar;
                 document.getElementById("lihatGambar").src = string2;
                 console.log(string2);    
             }
