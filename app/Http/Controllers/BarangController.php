@@ -32,7 +32,7 @@ class BarangController extends Controller
     }
     function destroy(Request $request) {
         $barang = Barang::find($request->id);
-        $hasil = Storage::delete('public/'.$barang->gambar);
+        $hasil = Storage::delete($barang->gambar);
         $barang->delete();
         return back();
     }

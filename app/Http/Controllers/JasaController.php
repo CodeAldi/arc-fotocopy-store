@@ -6,13 +6,14 @@ use App\Models\Jasa;
 use App\Models\Barang;
 use App\Models\KategoriJasa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JasaController extends Controller
 {
     function index() {
         $kategoriJasa = KategoriJasa::all();
         $jasa = Jasa::all();
-        return view('jasa',[
+        return view('jasaIndex',[
             'title'=>'Manajemen Jasa',
             'jasa'=>$jasa,
             'kategoriJasa'=>$kategoriJasa
@@ -26,6 +27,17 @@ class JasaController extends Controller
         $jasa->deskripsi = $request->deskripsi;
         $jasa->gambar = $request->file('gambar')->store('gambarJasa');
         $jasa->save();
+        return back();
+    }
+    function update(Request $request) {
+        $jasa = Jasa::find($request->id);
+        dd($jasa);
+        return back();
+    }
+    function destroy(Request $request) {
+        $jasa = Jasa::find($request->id);
+        $hasil = Storage::delete($jasa->gambar);
+        $jasa->delete();
         return back();
     }
 }

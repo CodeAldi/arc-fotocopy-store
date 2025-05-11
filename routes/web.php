@@ -34,6 +34,8 @@ Route::controller(KategoriBarangController::class)->group(function(){
 Route::controller(JasaController::class)->group(function(){
     Route::get('jasa','index')->name('jasa.index');
     Route::post('jasa/tambah','store')->name('jasa.tambah');
+    Route::post('jasa/edit','update')->name('jasa.edit');
+    Route::post('jasa/hapus','destroy')->name('jasa.hapus');
 });
 Route::controller(KategoriJasaController::class)->group(function(){
     Route::post('kategori-jasa/tambah','store')->name('kategoriJasa.tambah');
