@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\authenticate;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
@@ -20,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('beranda',['title'=>'Beranda']);
 })->name('beranda');
+
+Route::controller(authenticate::class)->group(function() {
+    Route::get('/login','renderLogin')->name('login');
+    Route::get('/register','renderRegister')->name('register');
+    Route::get('/forgot-password','renderForgotPassword')->name('forgot');
+});
 
 Route::controller(BarangController::class)->group(function(){
     Route::get('/barang','index')->name('barang.index');
