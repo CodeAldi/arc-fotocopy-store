@@ -5,6 +5,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\KategoriJasaController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::controller(LandingPageController::class)->group(function(){
+    Route::get('/','index')->name('landing.home');
+});
+
+Route::get('/beranda', function () {
     return view('beranda',['title'=>'Beranda']);
 })->name('beranda');
 
