@@ -21,4 +21,5 @@ class authenticate extends Controller
             'title','Forgot Password',
         ]);
     }
+    
 }
