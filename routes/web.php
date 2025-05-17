@@ -31,6 +31,7 @@ Route::controller(authenticate::class)->group(function() {
     Route::get('/login','renderLogin')->name('login');
     Route::get('/register','renderRegister')->name('register');
     Route::get('/forgot-password','renderForgotPassword')->name('forgot');
+    Route::post('/register','registerAksi')->name('register.aksi');
 });
 
 Route::controller(BarangController::class)->group(function(){
