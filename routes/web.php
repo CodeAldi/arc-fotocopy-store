@@ -25,7 +25,7 @@ Route::controller(LandingPageController::class)->group(function(){
 
 Route::get('/beranda', function () {
     return view('beranda',['title'=>'Beranda']);
-})->name('beranda');
+})->middleware('auth')->name('beranda');
 
 Route::controller(authenticateController::class)->group(function() {
     Route::get('/login','renderLogin')->middleware('guest')->name('login');

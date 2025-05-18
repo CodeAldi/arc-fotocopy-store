@@ -45,11 +45,14 @@ class authenticateController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('dashboard');
+            if (auth()->user()->hasRole('pembeli')) {
+                return redirect()->route('landing.home');
+            }
+            else {
+                return redirect()->route('beranda');
+            }
         }
 
         return back()->withErrors([
