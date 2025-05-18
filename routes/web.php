@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\authenticate;
+use App\Http\Controllers\authenticateController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
@@ -27,11 +27,13 @@ Route::get('/beranda', function () {
     return view('beranda',['title'=>'Beranda']);
 })->name('beranda');
 
-Route::controller(authenticate::class)->group(function() {
-    Route::get('/login','renderLogin')->name('login');
-    Route::get('/register','renderRegister')->name('register');
-    Route::get('/forgot-password','renderForgotPassword')->name('forgot');
-    Route::post('/register','registerAksi')->name('register.aksi');
+Route::controller(authenticateController::class)->group(function() {
+    Route::get('/login','renderLogin')->middleware('guest')->name('login');
+    Route::get('/register','renderRegister')->middleware('guest')->name('register');
+    Route::get('/forgot-password','renderForgotPassword')->middleware('guest')->name('forgot');
+    Route::post('/register','registerAksi')->middleware('guest')->name('register.aksi');
+    Route::post('/login','loginAksi')->middleware('guest')->name('login.aksi');
+    Route::post('/logout','logoutAksi')->middleware('auth')->name('logout.aksi');
 });
 
 Route::controller(BarangController::class)->group(function(){
