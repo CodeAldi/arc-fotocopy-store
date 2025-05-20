@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('namaJasa');
             $table->float('harga',13,3);
             $table->string('deskripsi');
+            $table->string('gambar');
             $table->timestamps();
         });
     }
