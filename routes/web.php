@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\authenticateController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\HalamanBarangController;
+use App\Http\Controllers\HalamanJasaController;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\KategoriJasaController;
@@ -21,6 +23,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(LandingPageController::class)->group(function(){
     Route::get('/','index')->name('landing.home');
+});
+Route::controller(HalamanBarangController::class)->group(function(){
+    Route::get('/halaman-barang','index')->name('halaman.barang');
+});
+Route::controller(HalamanJasaController::class)->group(function(){
+    Route::get('/halaman-jasa','index')->name('halaman.jasa');
 });
 
 Route::get('/beranda', function () {

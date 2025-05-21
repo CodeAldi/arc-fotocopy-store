@@ -6,13 +6,19 @@
     <!-- ***** Logo End ***** -->
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-        <li class="scroll-to-section"><a href="#men">ATK dan lain lain</a></li>
-        <li class="scroll-to-section"><a href="#women">Jasa</a></li>
-        <li class="scroll-to-section"><a href="#about">tentang kami</a></li>
+        <li class="scroll-to-section"><a href="{{ route('landing.home') }}" class="{{ (Request::RouteIs('landing.home')) ? 'active' : '' }}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{ route('halaman.barang') }}" class="{{ (Request::RouteIs('halaman.barang')) ? 'active' : '' }}">ATK dan lain lain</a></li>
+        <li class="scroll-to-section"><a href={{ route('halaman.jasa') }} class="{{ (Request::RouteIs('halaman.jasa')) ? 'active' : '' }}">Jasa</a></li>
+        {{-- <li class="scroll-to-section"><a href="#about">tentang kami</a></li> --}}
         @if (auth()->check())
         <li class="scroll-to-section"><a href="#"><i class="fa fa-shopping-cart"></i>0</a></li>
-        <li class="scroll-to-section border rounded-pill border-success"><a href="#"><i class="fa fa-user"></i>Saya</a></li>
+        <li class="submenu border rounded-pill border-success"><a href="javascript:;"><i class="fa fa-user"></i>Saya</a>
+            <ul>
+                <li><a href="#">pengaturan akun</a></li>
+                <li><a href="#">pesanan</a></li>
+                <li><a href="#">riwayat pesanan</a></li>
+            </ul>
+        </li>
         <li class="scroll-to-section border rounded-pill border-secondary ml-2">
             <form action="{{ route('logout.aksi') }}" method="post">
                 @csrf
