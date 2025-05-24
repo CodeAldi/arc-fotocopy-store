@@ -21,7 +21,6 @@
                 <div class="col-lg-8">
                     <div class="left-images">
                         <img src="{{ asset($barang->gambar) }}" alt="">
-                        {{-- <img src="assets/images/single-product-02.jpg" alt=""> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -42,7 +41,7 @@
                         </div> --}}
                         <div class="quantity-content">
                             <div class="left-content">
-                                <h6>No. of Orders</h6>
+                                <h6>Jumlah</h6>
                             </div>
                             <div class="right-content">
                                 <div class="quantity buttons_added">
