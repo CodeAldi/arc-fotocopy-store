@@ -29,7 +29,7 @@
                     </div>
                     <div class="down-content">
                         <h4>{{ $item->namaBarang }}</h4>
-                        <span>Rp.{{ $item->hargaJasa }},- (stock : {{ $item->jumlah }})</span>
+                        <span>Rp.{{ $item->harga }},- (stock : {{ $item->jumlah }})</span>
                         <span>{{ $item->deskripsi }}</span>
                         <ul class="stars">
                             <li><span class="badge">{{ $item->kategori->namaKategori }}</span></li>

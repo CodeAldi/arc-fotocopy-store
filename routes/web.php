@@ -26,6 +26,7 @@ Route::controller(LandingPageController::class)->group(function(){
 });
 Route::controller(HalamanBarangController::class)->group(function(){
     Route::get('/halaman-barang','index')->name('halaman.barang');
+    Route::get('/halaman-barang/{id}/pesan','renderPesanBarang')->name('halaman.barang.pesan');
 });
 Route::controller(HalamanJasaController::class)->group(function(){
     Route::get('/halaman-jasa','index')->name('halaman.jasa');

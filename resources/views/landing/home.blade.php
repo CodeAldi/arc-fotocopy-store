@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex">
-                    <form action="#" method="get">
+                    <form action="{{ route('halaman.barang') }}" method="get">
 
                         <button class="btn rounded rounded-pill btn-success ml-auto mr-5 ml-5 mb-5"><i class="fa fa-arrow-right" aria-hidden="true"></i>Lihat semua</button>
                     </form>
@@ -154,7 +154,7 @@
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                                            <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}"><i class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -270,7 +270,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex">
-                    <form action="#" method="get">
+                    <form action="{{ route('halaman.jasa') }}" method="get">
                 
                         <button class="btn rounded rounded-pill btn-success ml-auto mr-5 ml-5 mb-5"><i class="fa fa-arrow-right"
                                 aria-hidden="true"></i>Lihat semua</button>

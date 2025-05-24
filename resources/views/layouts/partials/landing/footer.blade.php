@@ -37,9 +37,9 @@
             </div>
             <div class="col-lg-12">
                 <div class="under-footer">
-                    <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
+                    <p>Copyright © 2025 ARC FOTOCOPY.
 
-                        <br>Design: <a href="https://templatemo.com" target="_parent"
+                        <br>Template by: <a href="https://templatemo.com" target="_parent"
                             title="free css templates">TemplateMo</a>
                     </p>
                 </div>

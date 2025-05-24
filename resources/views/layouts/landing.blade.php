@@ -10,19 +10,19 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
-    <title>Hexashop Ecommerce HTML CSS Template</title>
+    <title>ARC FOTOCOPY</title>
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="landing-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('landing-assets/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="landing-assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('landing-assets/css/font-awesome.css') }}">
 
-    <link rel="stylesheet" href="landing-assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="{{ asset('landing-assets/css/templatemo-hexashop.css') }}">
 
-    <link rel="stylesheet" href="landing-assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="{{ asset('landing-assets/css/owl-carousel.css') }}">
 
-    <link rel="stylesheet" href="landing-assets/css/lightbox.css">
+    <link rel="stylesheet" href="{{ asset('landing-assets/css/lightbox.css') }}">
     <!--
 
 TemplateMo 571 Hexashop
@@ -64,26 +64,27 @@ https://templatemo.com/tm-571-hexashop
 
 
     <!-- jQuery -->
-    <script src="landing-assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{{ asset('landing-assets/js/jquery-2.1.0.min.js') }}"></script>
 
     <!-- Bootstrap -->
-    <script src="landing-assets/js/popper.js"></script>
-    <script src="landing-assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('landing-assets/js/popper.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/bootstrap.min.js') }}"></script>
 
     <!-- Plugins -->
-    <script src="landing-assets/js/owl-carousel.js"></script>
-    <script src="landing-assets/js/accordions.js"></script>
-    <script src="landing-assets/js/datepicker.js"></script>
-    <script src="landing-assets/js/scrollreveal.min.js"></script>
-    <script src="landing-assets/js/waypoints.min.js"></script>
-    <script src="landing-assets/js/jquery.counterup.min.js"></script>
-    <script src="landing-assets/js/imgfix.min.js"></script>
-    <script src="landing-assets/js/slick.js"></script>
-    <script src="landing-assets/js/lightbox.js"></script>
-    <script src="landing-assets/js/isotope.js"></script>
+    <script src="{{ asset('landing-assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/accordions.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/datepicker.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/scrollreveal.min.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/imgfix.min.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/slick.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/lightbox.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('landing-assets/js/quantity.js') }}"></script>
 
     <!-- Global Init -->
-    <script src="landing-assets/js/custom.js"></script>
+    <script src="{{ asset('landing-assets/js/custom.js')}}"></script>
 
     <script>
         $(function() {

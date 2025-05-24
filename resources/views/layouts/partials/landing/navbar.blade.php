@@ -1,7 +1,8 @@
 <nav class="main-nav">
     <!-- ***** Logo Start ***** -->
     <a href="index.html" class="logo">
-        <img src="landing-assets/images/logo.png">
+        {{-- <img src="landing-assets/images/logo.png"> --}}
+        <h1 class="text-success mt-3 p-2">ARC FOTOCOPY</h1>
     </a>
     <!-- ***** Logo End ***** -->
     <!-- ***** Menu Start ***** -->
