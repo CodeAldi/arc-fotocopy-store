@@ -37,6 +37,24 @@
         @empty
             
         @endforelse
+        <div class="col-12">
+            <div class="card my-2 ">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">Total Bayar:</div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col">Rp.{{ $totalbayar }},-</div>
+                        <div class="col">
+                            <form action="{{ route('checkout.store') }}" method="post">
+                                @csrf
+                                <button class="btn btn-success">Bayar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

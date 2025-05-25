@@ -9,6 +9,7 @@ use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\KategoriJasaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,11 @@ Route::controller(HalamanJasaController::class)->group(function(){
 Route::controller(KeranjangController::class)->middleware(['auth'])->group(function(){
     Route::get('/lihat-keranjang','index')->name('keranjang.lihat');
     Route::post('/masukan-keranjang','store')->name('keranjang.masukan');
+});
+
+Route::controller(OrderController::class)->middleware(['auth'])->group(function(){
+    Route::get('/checkout/bayar','index')->name('checkout.bayar');
+    Route::post('/checkout','store')->name('checkout.store');
 });
 
 Route::get('/beranda', function () {

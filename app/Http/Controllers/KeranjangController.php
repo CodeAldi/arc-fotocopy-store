@@ -9,8 +9,13 @@ class KeranjangController extends Controller
 {
     function index() {
         $keranjang = Keranjang::where('user_id', Auth()->user()->id)->get();
+        $totalbayar = 0;
+        foreach ($keranjang as $key => $value) {
+            $totalbayar = $totalbayar + ($value->barang->hargaBarang * $value->jumlah);
+        }
         return view('landing.keranjang',[
             'keranjang'=> $keranjang,
+            'totalbayar' => $totalbayar,
         ]);
     }
     function store(Request $request) {
