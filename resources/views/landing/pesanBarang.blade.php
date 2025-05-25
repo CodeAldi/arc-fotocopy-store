@@ -25,20 +25,11 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="right-content">
+                    <form action="{{ route('keranjang.masukan') }}" method="post">
+                    @csrf
                         <h4>{{ $barang->namaBarang }}</h4>
                         <span class="price" id="hargaSatuan">Rp.{{ $barang->hargaBarang }},-</span>
-                        {{-- <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul> --}}
                         <span>{{ $barang->deskripsi }}</span>
-                        {{-- <div class="quote">
-                            <i class="fa fa-quote-left"></i>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
-                        </div> --}}
                         <div class="quantity-content">
                             <div class="left-content">
                                 <h6>Jumlah</h6>
@@ -53,11 +44,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="total">
-                            <h4 id="hargaTotal">total bayar : Rp. 3000</h4>
-                            <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        <div class="total">    
+                                <input type="text" hidden readonly value="{{ $barang->id }}" name="barang_id">
+                                <h4 class="mb-1">catatan untuk toko :</h4>
+                                <input type="text" name="catatan" placeholder="contoh : request warna spesifik" class="form-control mb-2">
+                                <h4 id="hargaTotal">total bayar : Rp. 3000</h4>
+                                <button class="btn btn-success mt-2">tambah ke keranjang</button>
+                                <div class="main-border-button">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
