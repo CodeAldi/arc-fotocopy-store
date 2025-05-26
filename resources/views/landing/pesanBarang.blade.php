@@ -48,7 +48,7 @@
                                 <input type="text" hidden readonly value="{{ $barang->id }}" name="barang_id">
                                 <h4 class="mb-1">catatan untuk toko :</h4>
                                 <input type="text" name="catatan" placeholder="contoh : request warna spesifik" class="form-control mb-2">
-                                <h4 id="hargaTotal">total bayar : Rp. 3000</h4>
+                                <h4 id="hargaTotal">total bayar : Rp. {{ $barang->hargaBarang }}</h4>
                                 <button class="btn btn-success mt-2">tambah ke keranjang</button>
                                 <div class="main-border-button">
                                 </div>
@@ -60,6 +60,16 @@
         </div>
     </section>
     <!-- ***** Product Area Ends ***** -->
+    @if (session('barangSuccess'))
+    <script>
+        Swal.fire({
+        title: 'Success!',
+        text: 'Barang berhasil ditambahkan ke keranjang',
+        icon: 'success',
+        confirmButtonText: 'oke'
+        })
+    </script>
+    @endif
     <script>
         function hitungHarga(item) {
             const myjson = item;

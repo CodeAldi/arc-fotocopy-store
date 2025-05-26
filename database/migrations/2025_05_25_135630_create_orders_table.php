@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('total_bayar');
             $table->string('snap_token');
+            $table->enum('status_pembayaran',['paid','unpaid'])->default('unpaid');
+            $table->enum('status_order',['working','done'])->default('working')->nullable();
             $table->timestamps();
         });
     }

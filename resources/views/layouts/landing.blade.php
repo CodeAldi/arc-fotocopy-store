@@ -23,13 +23,12 @@
     <link rel="stylesheet" href="{{ asset('landing-assets/css/owl-carousel.css') }}">
 
     <link rel="stylesheet" href="{{ asset('landing-assets/css/lightbox.css') }}">
-    <!--
+    <!--TemplateMo 571 Hexashop https://templatemo.com/tm-571-hexashop -->
 
-TemplateMo 571 Hexashop
-
-https://templatemo.com/tm-571-hexashop
-
--->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
+    " rel="stylesheet">
 </head>
 
 <body>
@@ -87,6 +86,7 @@ https://templatemo.com/tm-571-hexashop
     <script src="{{ asset('landing-assets/js/custom.js')}}"></script>
 
     <script>
+        
         $(function() {
             var selectedClass = "";
             $("p").click(function(){

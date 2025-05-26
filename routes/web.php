@@ -10,6 +10,7 @@ use App\Http\Controllers\KategoriJasaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\RiwayatPesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,11 @@ Route::controller(KeranjangController::class)->middleware(['auth'])->group(funct
 Route::controller(OrderController::class)->middleware(['auth'])->group(function(){
     Route::get('/checkout/bayar','index')->name('checkout.bayar');
     Route::post('/checkout','store')->name('checkout.store');
+    Route::post('/checkout-berhasil','berhasil')->name('checkout.berhasil');
+});
+
+Route::controller(RiwayatPesananController::class)->middleware(['auth'])->group(function(){
+    Route::get('cek-pesanan','index')->name('pesanan.cek');
 });
 
 Route::get('/beranda', function () {

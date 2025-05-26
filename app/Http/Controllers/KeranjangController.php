@@ -25,6 +25,6 @@ class KeranjangController extends Controller
         $keranjang->jumlah = $request->quantity;
         $keranjang->catatan = $request->catatan;
         $keranjang->save();
-        return redirect()->route('landing.home');
+        return back()->with('barangSuccess','success');
     }
 }

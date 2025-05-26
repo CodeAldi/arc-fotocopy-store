@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Keranjang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HalamanBarangController extends Controller
 {
     function index() {
-        $keranjang = Keranjang::where('user_id', Auth()->user()->id)->get();
+        if (Auth::check()) {
+            $keranjang = Keranjang::where('user_id', Auth()->user()->id)->get();
+        } else {
+            $keranjang = 0;
+        }
         $barang = Barang::paginate(3);
         return view('landing.barang',[
             'barang'=> $barang,

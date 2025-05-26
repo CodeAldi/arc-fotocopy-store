@@ -22,4 +22,13 @@ class OrderDetails extends Model
     {
         return $this->belongsTo(Order::class, 'order_id');
     }
+    /**
+     * Get the barang that owns the OrderDetails
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function barang(): BelongsTo
+    {
+        return $this->belongsTo(Barang::class, 'barang_id');
+    }
 }

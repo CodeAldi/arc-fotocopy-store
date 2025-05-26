@@ -1,6 +1,6 @@
 <nav class="main-nav">
     <!-- ***** Logo Start ***** -->
-    <a href="index.html" class="logo">
+    <a href="{{ route('landing.home') }}" class="logo">
         {{-- <img src="landing-assets/images/logo.png"> --}}
         <h1 class="text-success mt-3 p-2">ARC FOTOCOPY</h1>
     </a>
@@ -17,9 +17,8 @@
         </a></li>
         <li class="submenu border rounded-pill border-success"><a href="javascript:;"><i class="fa fa-user"></i>Saya</a>
             <ul>
-                <li><a href="#">pengaturan akun</a></li>
-                <li><a href="#">pesanan</a></li>
-                <li><a href="#">riwayat pesanan</a></li>
+                {{-- <li><a href="#">pengaturan akun</a></li> --}}
+                <li><a href="{{ route('pesanan.cek') }}">cek pesanan</a></li>
             </ul>
         </li>
         <li class="scroll-to-section border rounded-pill border-secondary ml-2">
