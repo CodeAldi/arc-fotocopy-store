@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mt-2 col-8">List Pesanan : Barang</h4>
+                <h4 class="card-title mt-2 col-8">List Pesanan : Jasa</h4>
             </div>
         </div>
     </div>
@@ -18,8 +18,9 @@
                         <tr>
                             <th>nama</th>
                             <th>item</th>
-                            <th>jumlah</th>
-                            <th>catatan</th>
+                            <th>dokumen</th>
+                            <th>jumlah halaman</th>
+                            <th>qty</th>
                             <th>total bayar</th>
                             <th>status bayar</th>
                             <th>status pesanan</th>
@@ -27,56 +28,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($order as $item)
                         <tr>
-                            <td>{{ $item->user->name }}</td>
+                            <td>siti</td>
+                            <td>print warna A4 75gr</td>
+                            <td><button  class="btn btn-sm btn-primary"><i class='bx bxs-file-doc'></i> download dokumen </button></td>
+                            <td>30 lembar</td>
+                            <td>1</td>
+                            <td>Rp.9000</td>
+                            <td>paid</td>
+                            <td>working</td>
                             <td>
-                                @foreach ($item->orderDetails as $itemDetails)
-                                    {{ $itemDetails->barang->namaBarang }}<hr><br>
-                                @endforeach
+                                <button class="btn btn-md rounded-pill btn-success">Selesaikan pesanan</button>
                             </td>
-                            <td>
-                                @foreach ($item->orderDetails as $itemDetails)
-                                {{ $itemDetails->jumlah }}<hr><br>
-                                @endforeach
-                            </td>
-                            <td>
-                                @foreach ($item->orderDetails as $itemDetails)
-                                @if (is_null($itemDetails->catatan) )
-                                    tidak ada catatan <hr><br>
-                                @else
-                                    {{ $itemDetails->catatan }}<hr><br>
-                                @endif
-                                @endforeach
-                            </td>
-                            <td>Rp.{{ $item->total_bayar }}</td>
-                            <td>{{ $item->status_pembayaran }}</td>
-                            <td>{{ $item->status_order }}</td>
-                            <td>
-                                <form action="{{ route('manajemenPesanan.barang.selesaikan',['id'=>$item->id]) }}" method="post">
-                                    @csrf
-                                    <button class="btn btn-md rounded-pill btn-success" {{ $item->status_order == ('done') ? 'disabled' : '' ; }}>Selesaikan pesanan</button>
-                                </form>
-                            </td>
-                            {{-- <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}"
-                                            onclick="modalEditKategori(this)" data-bs-target="#modalEditKategori"><i
-                                                class="bx bx-check-double me-1"></i>Selesai</button>
-                                        <button class="dropdown-item" data-bs-toggle="modal" data-index="{{ $item }}"
-                                            onclick="modalHapusKategori(this)" data-bs-target="#modalHapusKategori"><i
-                                                class="bx bx-trash me-1"></i> Delete</button>
-                                    </div>
-                                </div>
-                            </td> --}}
                         </tr>
-                        @empty
-                
-                        @endforelse
+                        <tr>
+                            <td>aldi</td>
+                            <td>print hitam-putih A4 75gr</td>
+                            <td>
+                                <button  class="btn btn-sm btn-primary"><i class='bx bxs-file-doc'></i> download dokumen </button>
+                            </td>
+                            <td>50 lembar</td>
+                            <td>2</td>
+                            <td>Rp.25000</td>
+                            <td>paid</td>
+                            <td>done</td>
+                            <td>
+                                <button class="btn btn-md rounded-pill btn-success" disabled>Selesaikan pesanan</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

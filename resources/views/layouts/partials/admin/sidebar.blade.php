@@ -45,8 +45,8 @@
                         <div>Barang</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="forms-input-groups.html" class="menu-link">
+                <li class="menu-item {{ (Request::RouteIs('manajemenPesanan.jasa.*')) ? 'active' : '' }}">
+                    <a href="{{ route('manajemenPesanan.jasa.index') }}" class="menu-link">
                         <div>Jasa</div>
                     </a>
                 </li>

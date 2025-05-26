@@ -67,6 +67,8 @@ Route::controller(authenticateController::class)->group(function() {
 
 Route::controller(ManajemenPesananController::class)->middleware(['auth','role:admin'])->group(function(){
     Route::get('manajamen-pesanan/barang/index', 'renderManajemenBarang')->name('manajemenPesanan.barang.index');
+    Route::get('manajamen-pesanan/jasa/index', 'renderManajemenJasa')->name('manajemenPesanan.jasa.index');
+    
     Route::post('manajemen-pesanan/barang/{id}/selesaikan', 'selesikanOrderBarang')->name('manajemenPesanan.barang.selesaikan');
 });
 

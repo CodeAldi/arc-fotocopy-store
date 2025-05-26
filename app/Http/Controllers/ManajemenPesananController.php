@@ -15,6 +15,11 @@ class ManajemenPesananController extends Controller
             'order' => $order,
         ]);
     }
+    function renderManajemenJasa() {
+        return view('manajemenPesananJasa', [
+            'title' => 'Manajemen Pesanan',
+        ]);
+    }
     function selesikanOrderBarang($id) {
         $order = Order::find($id);
         $order->status_order = 'done';
