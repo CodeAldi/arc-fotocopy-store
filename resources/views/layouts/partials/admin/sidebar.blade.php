@@ -34,14 +34,14 @@
                 <div>Manajemen Jasa</div>
             </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ (Request::RouteIs('manajemenPesanan.*')) ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-package"></i>
                 <div >Manajemen Pesanan</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="forms-basic-inputs.html" class="menu-link">
+                <li class="menu-item {{ (Request::RouteIs('manajemenPesanan.barang.*')) ? 'active' : '' }}">
+                    <a href="{{ route('manajemenPesanan.barang.index') }}" class="menu-link">
                         <div>Barang</div>
                     </a>
                 </li>

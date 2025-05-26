@@ -9,6 +9,7 @@ use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\KategoriJasaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ManajemenPesananController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RiwayatPesananController;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,7 @@ Route::controller(RiwayatPesananController::class)->middleware(['auth'])->group(
     Route::get('cek-pesanan','index')->name('pesanan.cek');
 });
 
+
 Route::get('/beranda', function () {
     return view('beranda',['title'=>'Beranda']);
 })->middleware('auth')->name('beranda');
@@ -61,6 +63,11 @@ Route::controller(authenticateController::class)->group(function() {
     Route::post('/register','registerAksi')->middleware('guest')->name('register.aksi');
     Route::post('/login','loginAksi')->middleware('guest')->name('login.aksi');
     Route::post('/logout','logoutAksi')->middleware('auth')->name('logout.aksi');
+});
+
+Route::controller(ManajemenPesananController::class)->middleware(['auth','role:admin'])->group(function(){
+    Route::get('manajamen-pesanan/barang/index', 'renderManajemenBarang')->name('manajemenPesanan.barang.index');
+    Route::post('manajemen-pesanan/barang/{id}/selesaikan', 'selesikanOrderBarang')->name('manajemenPesanan.barang.selesaikan');
 });
 
 Route::middleware(['auth','role:admin'])->group(function(){

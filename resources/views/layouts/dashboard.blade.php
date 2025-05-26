@@ -20,7 +20,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="sneat-assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('sneat-assets/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,17 +31,17 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="sneat-assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="sneat-assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="sneat-assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="sneat-assets/css/demo.css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/css/demo.css') }}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="sneat-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
-    <link rel="stylesheet" href="sneat-assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="{{ asset('sneat-assets/vendor/libs/apex-charts/apex-charts.css') }}" />
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
       integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.1.8/datatables.min.css" rel="stylesheet">
@@ -51,11 +51,11 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="sneat-assets/vendor/js/helpers.js"></script>
+    <script src="{{ asset('sneat-assets/vendor/js/helpers.js') }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="sneat-assets/js/config.js"></script>
+    <script src="{{ asset('sneat-assets/js/config.js') }}"></script>
   </head>
 
   <body>
@@ -99,22 +99,22 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="sneat-assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="sneat-assets/vendor/libs/popper/popper.js"></script>
-    <script src="sneat-assets/vendor/js/bootstrap.js"></script>
-    <script src="sneat-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{ asset('sneat-assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('sneat-assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('sneat-assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('sneat-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <script src="sneat-assets/vendor/js/menu.js"></script>
+    <script src="{{ asset('sneat-assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="sneat-assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="{{ asset('sneat-assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="sneat-assets/js/main.js"></script>
+    <script src="{{ asset('sneat-assets/js/main.js') }}"></script>
 
     <!-- Page JS -->
-    <script src="sneat-assets/js/dashboards-analytics.js"></script>
+    <script src="{{ asset('sneat-assets/js/dashboards-analytics.js') }}"></script>
 
     @stack('page-js')
   </body>
