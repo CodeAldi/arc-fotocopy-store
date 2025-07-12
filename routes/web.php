@@ -34,6 +34,7 @@ Route::controller(HalamanBarangController::class)->group(function(){
 });
 Route::controller(HalamanJasaController::class)->group(function(){
     Route::get('/halaman-jasa','index')->name('halaman.jasa');
+    Route::get('/halaman-jasa/{id}/pesan', 'renderPesanJasa')->middleware(['auth'])->name('halaman.jasa.pesan');
 });
 
 Route::controller(KeranjangController::class)->middleware(['auth'])->group(function(){

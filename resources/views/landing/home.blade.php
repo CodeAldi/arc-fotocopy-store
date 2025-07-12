@@ -122,7 +122,7 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
     
-    <!-- ***** Men Area Starts ***** -->
+    {{--!! <!-- ***** section barang Starts ***** --> --}}
     <section class="section" id="men">
         <div class="container">
             <div class="row">
@@ -152,8 +152,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}"><i class="fa fa-shopping-cart"></i></a>
+                                            {{-- <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li> --}}
+                                            <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}" class="bg-success text-white"><i class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -177,7 +177,7 @@
     
                             @else
     
-                            <div class="item">
+                            {{-- <div class="item">
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
@@ -248,7 +248,7 @@
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                             @endif
                         </div>
                     </div>
@@ -256,9 +256,9 @@
             </div>
         </div>
     </section>
-    <!-- ***** Men Area Ends ***** -->
+    {{--!! <!-- ***** section barang Ends ***** --> --}}
     
-    <!-- ***** Women Area Starts ***** -->
+    {{--!! <!-- ***** section jasa Starts ***** --> --}}
     <section class="section" id="women">
         <div class="container">
             <div class="row">
@@ -289,9 +289,9 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                                            {{-- <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li> --}}
+                                            {{-- <li><a href="single-product.html"><i class="fa fa-star"></i></a></li> --}}
+                                            <li><a href="{{ route('halaman.jasa.pesan',['id'=>$item->id]) }}" class="bg-success text-white"><i class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -393,7 +393,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Women Area Ends ***** -->
+    {{--!! <!-- ***** section jasa Ends ***** --> --}}
     
     
     

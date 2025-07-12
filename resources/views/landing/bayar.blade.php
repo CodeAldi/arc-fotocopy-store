@@ -45,7 +45,8 @@
       snap.pay('<?=$order->snap_token?>', {
         // Optional
         onSuccess: function(result){
-          /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+          /* You may add your own js here, this is just example */ 
+          // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
           Swal.fire({
           title: 'Success!',
           text: 'Pembayaran berhasil',

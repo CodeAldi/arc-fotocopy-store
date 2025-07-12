@@ -27,11 +27,14 @@
                         <img src="{{ asset($item->gambar) }}" alt="">
                     </div>
                     <div class="down-content">
-                        <h4>{{ $item->namaBarang }}</h4>
+                        <h5>{{ $item->namaBarang }}</h5>
                         <span>Rp.{{ $item->hargaBarang }},- (stock : {{ $item->jumlah }})</span>
                         <span>{{ $item->deskripsi }}</span>
                         <ul class="stars">
-                            <li><span class="badge">{{ $item->kategori->namaKategori }}</span></li>
+                            <li>
+                                <span class="badge badge-pill bg-info text-white">{{ $item->kategori->namaKategori }}</span>
+                                {{-- <span class="badge">{{ $item->kategori->namaKategori }}</span> --}}
+                            </li>
                         </ul>
                     </div>
                 </div>
