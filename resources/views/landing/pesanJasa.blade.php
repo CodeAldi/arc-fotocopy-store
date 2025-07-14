@@ -66,8 +66,8 @@
                         <div class="main-border-button">
                         </div>
                         <div class="tombol">
-                            <button class="btn btn-danger mt-2">Batal dan Kembali !</button>
                             <button class="btn btn-success mt-2">Pesan dan Bayar !</button>
+                            <button class="btn btn-danger mt-2">Batal dan Kembali !</button>
                         </div>
                 </div>
                 </form>

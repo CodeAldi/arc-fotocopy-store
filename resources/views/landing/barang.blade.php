@@ -20,8 +20,8 @@
                     <div class="thumb">
                         <div class="hover-content">
                             <ul>
-                                <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}"><i class="fa fa-shopping-cart"></i></a>
+                                {{-- <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}"><i class="fa fa-eye"></i></a></li> --}}
+                                <li><a href="{{ route('halaman.barang.pesan',['id'=>$item->id]) }}" class="bg-success text-white"><i class="fa fa-shopping-cart"></i></a>
                             </ul>
                         </div>
                         <img src="{{ asset($item->gambar) }}" alt="">

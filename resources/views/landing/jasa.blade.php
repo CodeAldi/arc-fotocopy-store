@@ -22,7 +22,7 @@
                             <ul>
                                 {{-- <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                 <li><a href="single-product.html"><i class="fa fa-star"></i></a></li> --}}
-                                <li><a href="{{ route('halaman.jasa.pesan',['id'=>$item->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{ route('halaman.jasa.pesan',['id'=>$item->id]) }}" class="bg-success text-white"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <img src="{{ asset($item->gambar) }}" alt="">
